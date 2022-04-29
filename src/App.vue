@@ -19,14 +19,16 @@
     export default {
         data() {
             return {
-                todos: [
-                    {id: 1, title: 'Купить хлеб', completed: false},
-                    {id: 2, title: 'Купить масло', completed: false},
-                    {id: 3, title: 'Купить сыр', completed: false}
-                ]
+                todos: []
             }
         },
-        components: {TodoList, AddTodo},
+        mounted() {
+            fetch('https://jsonplaceholder.typicode.com/todos?_limit=3')
+                .then(response => response.json())
+                .then(json => {
+                    this.todos = json
+                })
+        },
         methods: {
             removeTodo(id) {
                 this.todos = this.todos.filter(t => t.id !== id)
@@ -34,7 +36,8 @@
             addTodo(todo) {
                 this.todos.push(todo)
             }
-        }
+        },
+        components: {TodoList, AddTodo},
     }
 </script>
 
