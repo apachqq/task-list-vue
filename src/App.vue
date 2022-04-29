@@ -2,7 +2,10 @@
     <div id="app">
         <h1>Todo application</h1>
         <hr>
-        <todo-list :todos="todos"></todo-list>
+        <todo-list
+                :todos="todos"
+                @remove-todo="removeTodo"
+        ></todo-list>
     </div>
 </template>
 
@@ -19,7 +22,12 @@
                 ]
             }
         },
-        components: {TodoList}
+        components: {TodoList},
+        methods: {
+            removeTodo(id) {
+                this.todos = this.todos.filter(t => t.id !== id)
+            }
+        }
     }
 </script>
 

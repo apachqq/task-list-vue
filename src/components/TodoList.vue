@@ -4,6 +4,7 @@
             <todo-item
                     v-for="todo in todos"
                     :todo="todo"
+                    @remove-todo="removeTodo"
             ></todo-item>
         </ul>
     </div>
@@ -18,7 +19,12 @@
                 type: Array
             }
         },
-        components: {TodoItem}
+        components: {TodoItem},
+        methods: {
+            removeTodo(id) {
+                this.$emit('remove-todo', id)
+            }
+        }
     }
 </script>
 
