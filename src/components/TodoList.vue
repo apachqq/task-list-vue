@@ -1,7 +1,10 @@
 <template>
     <div>
         <ul>
-            <li>todo 1</li>
+            <todo-item
+                    v-for="todo in todos"
+                    :todo="todo"
+            ></todo-item>
         </ul>
     </div>
 </template>
@@ -10,6 +13,11 @@
     import TodoItem from '@/components/TodoItem'
 
     export default {
+        props: {
+            todos: {
+                type: Array
+            }
+        },
         components: {TodoItem}
     }
 </script>
