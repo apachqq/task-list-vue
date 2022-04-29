@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <ul>
-            <todo-item
-                    v-for="(todo, i) in todos"
-                    :todo="todo"
-                    :index="i"
-                    @remove-todo="removeTodo"
-            ></todo-item>
-        </ul>
-    </div>
+    <ul>
+        <todo-item
+                v-for="(todo, i) in todos"
+                :todo="todo"
+                :index="i"
+                @remove-todo="removeTodo"
+        ></todo-item>
+    </ul>
 </template>
 
 <script>

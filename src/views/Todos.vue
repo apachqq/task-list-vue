@@ -1,15 +1,17 @@
 <template>
-    <div>
-        <h2>Todo application</h2>
-        <add-todo
-                @add-todo="addTodo"
-        ></add-todo>
-        <hr>
-        <todo-list
-                :todos="todos"
-                @remove-todo="removeTodo"
-        ></todo-list>
-    </div>
+    <h2>Todo application</h2>
+    <router-link to="/">Home</router-link>
+    <hr>
+    <add-todo
+            @add-todo="addTodo"
+    ></add-todo>
+    <hr>
+    <todo-list
+            :todos="todos"
+            @remove-todo="removeTodo"
+            v-if="todos.length"
+    ></todo-list>
+    <p v-else>No todos!</p>
 </template>
 
 <script>
