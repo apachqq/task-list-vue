@@ -1,7 +1,14 @@
 <template>
-    <div id="app">
-        <h1>Todo application</h1>
-        <router-view></router-view>
+    <div>
+        <h2>Todo application</h2>
+        <add-todo
+                @add-todo="addTodo"
+        ></add-todo>
+        <hr>
+        <todo-list
+                :todos="todos"
+                @remove-todo="removeTodo"
+        ></todo-list>
     </div>
 </template>
 
@@ -34,12 +41,5 @@
     }
 </script>
 
-<style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+<style scoped>
 </style>
