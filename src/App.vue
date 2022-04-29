@@ -1,5 +1,4 @@
 <template>
-    <h1>Todo application</h1>
     <router-view></router-view>
 </template>
 
@@ -34,6 +33,7 @@
 
 <style>
     #app {
+        padding-top: 30px;
         text-align: center;
     }
 </style>

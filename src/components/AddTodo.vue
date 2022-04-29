@@ -35,8 +35,8 @@
 
     input {
         width: 400px;
-        color: white;
-        background: darkgrey;
+        color: black;
+        background: lightgrey;
     }
 
     .btn {
