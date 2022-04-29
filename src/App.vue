@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <h1>Todo application</h1>
+        <add-todo
+                @add-todo="addTodo"
+        ></add-todo>
         <hr>
         <todo-list
                 :todos="todos"
@@ -11,6 +14,7 @@
 
 <script>
     import TodoList from '@/components/TodoList'
+    import AddTodo from '@/components/AddTodo'
 
     export default {
         data() {
@@ -22,10 +26,13 @@
                 ]
             }
         },
-        components: {TodoList},
+        components: {TodoList, AddTodo},
         methods: {
             removeTodo(id) {
                 this.todos = this.todos.filter(t => t.id !== id)
+            },
+            addTodo(todo) {
+                this.todos.push(todo)
             }
         }
     }
