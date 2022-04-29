@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="onSubmit">
         <input type="text" v-model="title">
-        <button type="submit">Create</button>
+        <button class="btn" type="submit">Create</button>
     </form>
 </template>
 
@@ -35,5 +35,12 @@
 
     input {
         width: 400px;
+        color: white;
+        background: darkgrey;
+    }
+
+    .btn {
+        color: white;
+        background: #2c3e50;
     }
 </style>
