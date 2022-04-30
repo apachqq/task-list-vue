@@ -28,9 +28,8 @@
     export default {
         data() {
             return {
-                todos: [],
                 loading: true,
-                filter: 'all'
+                filter: this.$store.state.filter
             }
         },
         mounted() {
@@ -38,24 +37,17 @@
                 .then(response => response.json())
                 .then(json => {
                     setTimeout(() => {
-                        this.todos = json
+                        this.$store.state.todos = json
                         this.loading = false
                     }, 1000)
                 })
         },
         computed: {
             filteredTodos() {
-                if (this.filter === 'all') {
-                    return this.todos
-                }
-
-                if (this.filter === 'completed') {
-                    return this.todos.filter(t => t.completed)
-                }
-
-                if (this.filter === 'not-completed') {
-                    return this.todos.filter(t => !t.completed)
-                }
+                return this.$store.getters.filteredTodos
+            },
+            todos() {
+                return this.$store.getters.todos
             }
         },
         methods: {
@@ -72,6 +64,6 @@
 
 <style scoped>
     select {
-        background: lightgrey;;
+        background: lightgrey;
     }
 </style>
