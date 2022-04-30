@@ -28,8 +28,9 @@
     export default {
         data() {
             return {
+                todos: [],
                 loading: true,
-                filter: this.$store.state.filter
+                filter: 'all'
             }
         },
         mounted() {
@@ -37,17 +38,24 @@
                 .then(response => response.json())
                 .then(json => {
                     setTimeout(() => {
-                        this.$store.state.todos = json
+                        this.todos = json
                         this.loading = false
                     }, 1000)
                 })
         },
         computed: {
             filteredTodos() {
-                return this.$store.getters.filteredTodos
-            },
-            todos() {
-                return this.$store.getters.todos
+                if (this.filter === 'all') {
+                    return this.todos
+                }
+
+                if (this.filter === 'completed') {
+                    return this.todos.filter(t => t.completed)
+                }
+
+                if (this.filter === 'not-completed') {
+                    return this.todos.filter(t => !t.completed)
+                }
             }
         },
         methods: {
