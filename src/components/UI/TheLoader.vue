@@ -3,6 +3,9 @@
 </template>
 
 <script>
+    export default {
+        name: 'the-loader'
+    }
 </script>
 
 <style scoped>

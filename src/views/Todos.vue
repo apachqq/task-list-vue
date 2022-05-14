@@ -11,7 +11,7 @@
         <option value="not-completed">Not Completed</option>
     </select>
     <hr>
-    <Loader v-if="loading"/>
+    <the-loader v-if="loading"></the-loader>
     <todo-list
             :todos="filteredTodos"
             @remove-todo="removeTodo"
@@ -23,7 +23,6 @@
 <script>
     import TodoList from '@/components/TodoList'
     import AddTodo from '@/components/AddTodo'
-    import Loader from '@/components/Loader'
 
     export default {
         data() {
@@ -66,7 +65,7 @@
                 this.todos.push(todo)
             }
         },
-        components: {TodoList, AddTodo, Loader},
+        components: {TodoList, AddTodo}
     }
 </script>
 
