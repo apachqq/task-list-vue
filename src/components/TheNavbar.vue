@@ -1,8 +1,8 @@
 <template>
     <div class="navbar">
-        <div>Task list</div>
+        <div @click="this.$router.push('/')" style="cursor: default">Task list</div>
         <div class="navbar__btns">
-
+            <my-button @click="this.$router.push('/todos')">К задачам</my-button>
         </div>
     </div>
 </template>

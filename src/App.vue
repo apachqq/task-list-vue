@@ -35,7 +35,6 @@
 
 <style>
     #app {
-        padding-top: 30px;
         text-align: center;
     }
 </style>
