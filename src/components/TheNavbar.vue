@@ -2,7 +2,9 @@
     <div class="navbar">
         <div @click="this.$router.push('/')" style="cursor: default">Task list</div>
         <div class="navbar__btns">
-            <my-button @click="this.$router.push('/todos')">К задачам</my-button>
+            <my-button @click="this.$router.push('/todos')">To tasks</my-button>
+            <my-button @click="this.$router.push('/about')" style="margin-left: 20px">About us</my-button>
+            <my-button @click="this.$router.push('/login')" style="margin-left: 20px">Login</my-button>
         </div>
     </div>
 </template>
