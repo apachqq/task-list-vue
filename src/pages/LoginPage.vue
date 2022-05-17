@@ -1,14 +1,14 @@
 <template>
     <div class="card">
-        <h2>Авторизуйтесь</h2>
+        <h2>Login</h2>
         <form>
             <div class="input">
-                <input type="email" placeholder="Введите email" v-model="email">
+                <input type="email" placeholder="Enter email" v-model="email">
             </div>
             <div class="input">
-                <input type="password" placeholder="Введите пароль" v-model="password">
+                <input type="password" placeholder="Enter password" v-model="password">
             </div>
-            <my-button style="margin-top: 20px;" @click.prevent="login">Авторизуйтесь</my-button>
+            <my-button style="margin-top: 20px;" @click.prevent="login">Login</my-button>
         </form>
     </div>
 </template>
