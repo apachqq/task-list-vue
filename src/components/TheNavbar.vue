@@ -4,7 +4,20 @@
         <div class="navbar__btns">
             <my-button @click="this.$router.push('/todos')">To tasks</my-button>
             <my-button @click="this.$router.push('/about')" style="margin-left: 20px">About us</my-button>
-            <my-button @click="this.$router.push('/login')" style="margin-left: 20px">Login</my-button>
+            <my-button
+                    @click="this.$router.push('/login')"
+                    style="margin-left: 20px"
+                    v-if="!this.$store.state.isAuth"
+            >
+                Login
+            </my-button>
+            <my-button
+                    @click="this.$router.push('/login')"
+                    style="margin-left: 20px"
+                    v-else
+            >
+                Logout
+            </my-button>
         </div>
     </div>
 </template>

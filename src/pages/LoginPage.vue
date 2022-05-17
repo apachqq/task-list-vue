@@ -1,19 +1,40 @@
 <template>
     <div class="card">
         <h2>Авторизуйтесь</h2>
-        <form @submit.prevent="submit">
+        <form>
             <div class="input">
                 <input type="email" placeholder="Введите email" v-model="email">
             </div>
             <div class="input">
                 <input type="password" placeholder="Введите пароль" v-model="password">
             </div>
-            <my-button style="margin-top: 20px;">Авторизуйтесь</my-button>
+            <my-button style="margin-top: 20px;" @click.prevent="login">Авторизуйтесь</my-button>
         </form>
     </div>
 </template>
 
 <script>
+    export default {
+        data() {
+            return {
+                email: '',
+                password: ''
+            }
+        },
+        computed: {
+            isValid() {
+                return this.email !== '' && this.password !== ''
+            }
+        },
+        methods: {
+            login() {
+                if(this.isValid) {
+                    this.$store.commit('login')
+                    this.$router.push('/')
+                }
+            }
+        }
+    }
 </script>
 
 <style scoped>
