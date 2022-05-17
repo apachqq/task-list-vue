@@ -1,10 +1,12 @@
 <template>
+    <the-navbar></the-navbar>
     <router-view></router-view>
 </template>
 
 <script>
     import TodoList from '@/components/TodoList'
     import AddTodo from '@/components/AddTodo'
+    import TheNavbar from '@/components/TheNavbar'
 
     export default {
         data() {
@@ -27,7 +29,7 @@
                 this.todos.push(todo)
             }
         },
-        components: {TodoList, AddTodo},
+        components: {TodoList, AddTodo, TheNavbar},
     }
 </script>
 
