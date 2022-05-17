@@ -12,8 +12,8 @@
                 Login
             </my-button>
             <my-button
-                    @click="this.$router.push('/login')"
                     style="margin-left: 20px"
+                    @click="logout"
                     v-else
             >
                 Logout
@@ -23,6 +23,14 @@
 </template>
 
 <script>
+    export default {
+        methods: {
+            logout() {
+                this.$store.commit('logout')
+                this.$router.push('/login')
+            }
+        }
+    }
 </script>
 
 <style scoped>
