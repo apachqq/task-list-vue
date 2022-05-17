@@ -3,10 +3,10 @@
         <h2>Login</h2>
         <form>
             <div class="input">
-                <input type="email" placeholder="Enter email" v-model="email">
+                <input type="email" placeholder="Enter email" v-model.trim="email">
             </div>
             <div class="input">
-                <input type="password" placeholder="Enter password" v-model="password">
+                <input type="password" placeholder="Enter password" v-model.trim="password">
             </div>
             <my-button style="margin-top: 20px;" @click.prevent="login">Login</my-button>
         </form>
